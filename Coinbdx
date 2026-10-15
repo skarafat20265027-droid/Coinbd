@@ -1,0 +1,277 @@
+<div id="tcs-user-panel">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+/*<![CDATA[*/
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+#tcs-user-panel{background:#0d1117;color:#c9d1d9;font-family:'Hind Siliguri',sans-serif;padding:15px;border-radius:12px;max-width:600px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#tcs-user-panel *{box-sizing:border-box}
+#tcs-user-panel .u-head{background:linear-gradient(135deg,#161b22,#1f242d);border-bottom:2px solid #58a6ff;padding:14px 18px;border-radius:10px;margin-bottom:15px;display:flex;justify-content:space-between;align-items:center}
+#tcs-user-panel .u-head img{height:38px;border-radius:6px}
+#tcs-user-panel .u-head h2{margin:0;font-size:19px;color:#fff;font-weight:700;display:flex;align-items:center;gap:8px}
+.u-ad-box{background:linear-gradient(90deg,#1e293b,#0f172a);border:1px dashed #38bdf8;color:#38bdf8;padding:10px;border-radius:8px;margin-bottom:15px;text-align:center}
+.u-ad-box img{max-width:100%;border-radius:6px;margin-top:5px}
+#tcs-user-panel .u-banner{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:10px 14px;border-radius:8px;margin-bottom:15px;font-size:14px;text-align:center;font-weight:600}
+#tcs-user-panel .u-box{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:18px;margin-bottom:15px}
+#tcs-user-panel label{display:block;font-size:13px;color:#8b949e;margin-bottom:6px;font-weight:600}
+#tcs-user-panel input,#tcs-user-panel select{width:100%;padding:12px;border-radius:8px;border:1px solid #30363d;background:#0d1117;color:#fff;font-size:14px;margin-bottom:12px;outline:none}
+#tcs-user-panel .u-btn{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;padding:12px 18px;border-radius:8px;cursor:pointer;font-weight:700;font-size:14px;width:100%;display:flex;align-items:center;justify-content:center;gap:8px}
+#tcs-user-panel .u-btn-green{background:linear-gradient(135deg,#16a34a,#15803d)}
+#tcs-user-panel .u-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:15px}
+#tcs-user-panel .u-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px;text-align:center}
+#tcs-user-panel .u-card i{font-size:20px;color:#58a6ff}
+#tcs-user-panel .u-card span{display:block;font-size:12px;color:#8b949e}
+#tcs-user-panel .u-card b{font-size:18px;color:#3fb950;display:block;margin-top:2px}
+#tcs-user-panel .u-tabs{display:flex;gap:6px;margin-bottom:15px;overflow-x:auto}
+#tcs-user-panel .u-tab{flex:1;background:#21262d;color:#c9d1d9;border:1px solid #30363d;padding:10px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;text-align:center;white-space:nowrap}
+#tcs-user-panel .u-tab.on{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-color:#2563eb}
+.u-pk-card{background:#0d1117;border:1px solid #30363d;border-radius:10px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.u-pk-card b{font-size:17px;color:#58a6ff}
+.u-pk-card span{font-size:15px;color:#3fb950;font-weight:bold}
+.u-pk-btn{background:#238636;color:#fff;border:none;padding:8px 14px;border-radius:6px;font-weight:bold;cursor:pointer;font-size:13px}
+.pay-options{display:flex;gap:10px;margin-bottom:15px}
+.pay-option{flex:1;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:12px}
+.pay-option img{height:34px;width:34px;border-radius:8px}
+.pay-option.selected{border-color:#3fb950;background:#162016;color:#3fb950}
+.u-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);display:none;justify-content:center;align-items:center;z-index:9999}
+.u-modal-content{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;width:90%;max-width:420px}
+#tcs-user-panel .u-row{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:12px;margin-bottom:8px;font-size:13px}
+#tcs-user-panel .u-row-top{display:flex;justify-content:space-between;margin-bottom:4px}
+#tcs-user-panel .u-sub{font-size:11px;color:#8b949e}
+#tcs-user-panel .u-badge{padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600}
+#tcs-user-panel .u-badge.done{background:#238636;color:#fff}
+#tcs-user-panel .u-badge.pend{background:#9e6a03;color:#fff}
+#tcs-user-panel .u-badge.rej{background:#da3633;color:#fff}
+.u-links{display:flex;gap:10px;margin-top:15px}
+.u-links a{flex:1;text-align:center;padding:10px;border-radius:8px;text-decoration:none;color:#fff;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center;gap:6px}
+.u-wa{background:#25d366}.u-tg{background:#0088cc}
+/*]]>*/
+</style>
+
+<div class="u-head">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img id="u-site-logo" src="" alt="Logo" style="display:none;"/>
+    <h2 id="u-site-title"><i class="fa-solid fa-coins" style="color:#f59e0b;"> </i> TikTok Coin BD</h2>
+  </div>
+  <div id="u-head-user" style="display:none;font-size:12px;text-align:right;">
+    <span id="u-head-name" style="color:#fff;font-weight:bold;"> </span><br/>
+    <a href="javascript:void(0)" onclick="userLogout()" style="color:#f87171;">Logout</a>
+  </div>
+</div>
+
+<div id="u-ad-area" class="u-ad-box" style="display:none;"><div id="u-ad-content"> </div></div>
+<div id="u-offer-banner" class="u-banner" style="display:none;"> </div>
+
+<div id="u-auth-box" class="u-box" style="max-width:400px;margin:20px auto;">
+  <div id="u-auth-msg" style="display:none;padding:10px;border-radius:8px;margin-bottom:12px;font-size:13px;line-height:1.5;"> </div>
+  <div class="u-tabs">
+    <button class="u-tab on" id="tab-btn-login" onclick="switchAuthTab('login')">Login</button>
+    <button class="u-tab" id="tab-btn-signup" onclick="switchAuthTab('signup')">Register</button>
+  </div>
+  <div id="u-form-login">
+    <label>Email Address</label><input type="email" id="ulog-email" placeholder="Enter your email" autocomplete="email" autocapitalize="none"/>
+    <label>Password</label><input type="password" id="ulog-pass" placeholder="Enter password" onkeydown="if(event.key==='Enter')usrLogin()"/>
+    <div style="text-align:right;margin:-6px 0 10px;font-size:12px;"><a href="javascript:void(0)" onclick="togglePass('ulog-pass')" style="color:#8b949e;">👁 পাসওয়ার্ড দেখান/লুকান</a></div>
+    <button class="u-btn" onclick="usrLogin()">Login</button>
+    <div style="text-align:center;margin-top:10px;font-size:12px;"><a href="javascript:void(0)" onclick="usrForgot()" style="color:#58a6ff;">পাসওয়ার্ড ভুলে গেছেন?</a></div>
+  </div>
+  <div id="u-diag" style="font-size:11px;color:#f59e0b;margin-top:14px;text-align:center;line-height:1.6;">⚠️ স্ক্রিপ্ট চালু হয়নি — পেজ রিলোড দিন</div>
+  <div id="u-form-signup" style="display:none;">
+    <label>Full Name</label><input type="text" id="usign-name" placeholder="Enter your name"/>
+    <label>Mobile Number</label><input type="text" id="usign-mobile" placeholder="017xxxxxxxx"/>
+    <label>Email Address</label><input type="email" id="usign-email" placeholder="example@mail.com"/>
+    <label>Password</label><input type="password" id="usign-pass" placeholder="কমপক্ষে ৬ অক্ষর" onkeydown="if(event.key==='Enter')usrSignUp()"/>
+    <label>Referral Code (ঐচ্ছিক)</label><input type="text" id="usign-ref" placeholder="রেফার কোড থাকলে দিন"/>
+    <button class="u-btn u-btn-green" onclick="usrSignUp()">Register Account</button>
+  </div>
+</div>
+
+<div id="u-main-box" style="display:none;">
+  <div class="u-cards">
+    <div class="u-card"><i class="fa-solid fa-wallet"> </i><span>Current Balance</span><b id="ub-bal">৳0</b></div>
+    <div class="u-card"><i class="fa-solid fa-users"> </i><span>Total Referrals</span><b id="ub-refs" style="color:#58a6ff;">0</b></div>
+  </div>
+
+  <div class="u-tabs">
+    <button class="u-tab on" onclick="usrTab('buy',event)">🛒 Buy Coins</button>
+    <button class="u-tab" onclick="usrTab('deposit',event)">💰 Deposit Money</button>
+    <button class="u-tab" onclick="usrTab('withdraw',event)">💸 Withdraw Money</button>
+    <button class="u-tab" onclick="usrTab('history',event)">📜 History</button>
+    <button class="u-tab" onclick="usrTab('refer',event)">🎁 Refer</button>
+  </div>
+
+  <div id="utab-buy">
+    <div class="u-box">
+      <h3 style="margin-top:0;font-size:16px;">Available Coin Packages</h3>
+      <div style="font-size:12px;color:#8b949e;margin-bottom:10px;">অর্ডার করলে ব্যালেন্স থেকে টাকা কেটে নেওয়া হবে। ব্যালেন্স না থাকলে আগে Deposit করুন।</div>
+      <div id="u-packages-list"> </div>
+    </div>
+  </div>
+
+  <div id="utab-deposit" style="display:none;">
+    <div class="u-box">
+      <div style="background:#0d1117;padding:12px;border-radius:8px;margin-bottom:14px;font-size:13px;border:1px solid #30363d;">
+        <b>Payment Number:</b> <span id="u-pay-no" style="color:#3fb950;font-weight:bold;">-</span>
+      </div>
+      <label>Select Payment Method</label>
+      <div class="pay-options">
+        <div class="pay-option selected" id="m-bkash" onclick="selectPayMethod('bkash')">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e2136e'/%3E%3Cpath d='M16 14l22 8-10 10 20 6-30 14 8-18-14-6z' fill='%23fff'/%3E%3C/svg%3E" alt="bKash"/>
+          <span>bKash</span>
+        </div>
+        <div class="pay-option" id="m-nagad" onclick="selectPayMethod('nagad')">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f7921e'/%3E%3Cpath d='M32 10c-12 0-22 10-22 22s10 22 22 22 22-10 22-22S44 10 32 10zm0 8a14 14 0 0113 9H32v10h13a14 14 0 11-13-19z' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ed1c24'/%3E%3C/svg%3E" alt="Nagad"/>
+          <span>Nagad</span>
+        </div>
+      </div>
+      <label>💰 Amount (৳)</label><input type="number" id="udep-amount" placeholder="e.g. 100"/>
+      <label>Sender Mobile Number</label><input type="text" id="udep-sender" placeholder="017xxxxxxxx"/>
+      <label>Transaction ID (TrxID)</label><input type="text" id="udep-trx" placeholder="e.g. 8N7A6D5E"/>
+      <button class="u-btn u-btn-green" onclick="usrSubmitDeposit()">Submit Deposit</button>
+    </div>
+  </div>
+
+  <div id="utab-withdraw" style="display:none;">
+    <div class="u-box">
+      <div style="background:#0d1117;padding:10px;border-radius:8px;margin-bottom:12px;font-size:13px;border:1px solid #30363d;color:#f59e0b;">⏳ উইথড্র রিকোয়েস্ট ১০ থেকে ২৪ ঘন্টার ভিতরে প্রসেস করা হবে।</div>
+      <label>Method</label>
+      <select id="uwd-method"><option value="bKash">bKash</option><option value="Nagad">Nagad</option></select>
+      <label>💸 Amount (৳)</label><input type="number" id="uwd-amount" placeholder="Min 50 BDT"/>
+      <label>Account Number</label><input type="text" id="uwd-number" placeholder="017xxxxxxxx"/>
+      <button class="u-btn" onclick="usrSubmitWithdraw()">Submit Withdraw</button>
+    </div>
+  </div>
+
+  <div id="utab-history" style="display:none;">
+    <h4 style="margin:5px 0 10px 0;color:#58a6ff;">Order History</h4>
+    <div id="u-history-orders"> </div>
+    <h4 style="margin:18px 0 10px 0;color:#3fb950;">Deposit History</h4>
+    <div id="u-history-deposits"> </div>
+  </div>
+
+  <div id="utab-refer" style="display:none;">
+    <div class="u-box">
+      <h3 style="margin-top:0;font-size:16px;">🎁 রেফার করে ৳১৫০ বোনাস</h3>
+      <div style="font-size:13px;margin-bottom:12px;line-height:1.7;">১৫ জনকে রেফার করুন, তাদের মধ্যে কমপক্ষে ৮ জন ডিপোজিট করলে আপনি পাবেন <b style="color:#3fb950;">৳১৫০</b> বোনাস।</div>
+      <div class="u-row"><div class="u-row-top"><span>মোট রেফার</span><b id="ref-total">0/15</b></div><div class="u-row-top" style="margin:0;"><span>ডিপোজিটকারী রেফার</span><b id="ref-dep">0/8</b></div></div>
+      <label>আপনার রেফার লিংক</label>
+      <input type="text" id="ref-link" readonly="readonly" onclick="this.select()"/>
+      <button class="u-btn" style="margin-bottom:10px;" onclick="usrCopyRef()">📋 লিংক কপি করুন</button>
+      <button class="u-btn u-btn-green" id="ref-claim-btn" onclick="usrClaimRef()">🎁 ৳১৫০ বোনাস ক্লেইম করুন</button>
+    </div>
+  </div>
+
+  <div class="u-links">
+    <a id="u-link-wa" href="#" target="_blank" class="u-wa" style="display:none;"><i class="fa-brands fa-whatsapp"> </i> WhatsApp Support</a>
+    <a id="u-link-tg" href="#" target="_blank" class="u-tg" style="display:none;"><i class="fa-brands fa-telegram"> </i> Telegram Group</a>
+  </div>
+</div>
+
+<div id="order-modal" class="u-modal">
+  <div class="u-modal-content">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <h3 style="margin:0;font-size:16px;color:#fff;">Order Coin Package</h3>
+      <span onclick="closeOrderModal()" style="cursor:pointer;font-size:20px;color:#8b949e;">&#215;</span>
+    </div>
+    <div id="modal-pkg-info" style="color:#58a6ff;font-weight:bold;margin-bottom:6px;"> </div>
+    <div id="modal-bal-info" style="font-size:12px;color:#8b949e;margin-bottom:12px;"> </div>
+    <label>TikTok Username / ID</label>
+    <input type="text" id="m-ord-tiktok" placeholder="e.g. @username"/>
+    <label>যে ভিডিওটা ভাইরাল করতে চান তার লিংক দিন *</label>
+    <input type="text" id="m-ord-videolink" placeholder="https://vt.tiktok.com/..."/>
+    <label>পেমেন্ট মেথড</label>
+    <div class="pay-options">
+      <div class="pay-option" id="o-bkash" onclick="selectOrderMethod('bkash')"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e2136e'/%3E%3Cpath d='M16 14l22 8-10 10 20 6-30 14 8-18-14-6z' fill='%23fff'/%3E%3C/svg%3E" alt="bKash"/><span>বিকাশ</span></div>
+      <div class="pay-option" id="o-nagad" onclick="selectOrderMethod('nagad')"><img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f7921e'/%3E%3Cpath d='M32 10c-12 0-22 10-22 22s10 22 22 22 22-10 22-22S44 10 32 10zm0 8a14 14 0 0113 9H32v10h13a14 14 0 11-13-19z' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23ed1c24'/%3E%3C/svg%3E" alt="Nagad"/><span>নগদ</span></div>
+      <div class="pay-option" id="o-balance" onclick="selectOrderMethod('balance')"><i class="fa-solid fa-wallet" style="font-size:26px;line-height:34px;"> </i><span>ব্যালেন্স</span></div>
+    </div>
+    <div id="m-balance-note" style="font-size:12px;margin-bottom:12px;"> </div>
+    <div id="m-manual" style="display:none;">
+      <div style="background:#0d1117;padding:10px;border-radius:8px;margin-bottom:12px;font-size:13px;border:1px solid #30363d;"><b>Payment Number:</b> <span id="m-pay-no" style="color:#3fb950;font-weight:bold;">-</span><div class="u-sub" style="margin-top:4px;">Send Money করে নিচে তথ্য দিন</div></div>
+      <label>Sender Mobile Number</label><input type="text" id="m-ord-sender" placeholder="017xxxxxxxx"/>
+      <label>Transaction ID (TrxID)</label><input type="text" id="m-ord-trx" placeholder="e.g. 8N7A6D5E"/>
+    </div>
+    <button class="u-btn" onclick="confirmOrderFromModal()">Confirm Order</button>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js">/*<![CDATA[*/ /*]]>*/</script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js">/*<![CDATA[*/ /*]]>*/</script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js">/*<![CDATA[*/ /*]]>*/</script>
+<script>
+//<![CDATA[
+(function(){
+  var firebaseConfig = {
+    apiKey: "AIzaSyC2JSCrnQayaWTo2n4o1oldhwXZIkRT8D8",
+    authDomain: "tiktokcoinbd-a7c19.firebaseapp.com",
+    databaseURL: "https://tiktokcoinbd-a7c19-default-rtdb.firebaseio.com",
+    projectId: "tiktokcoinbd-a7c19",
+    storageBucket: "tiktokcoinbd-a7c19.firebasestorage.app",
+    messagingSenderId: "4727948065",
+    appId: "1:4727948065:web:7ec8214c05184277187460"
+  };
+  function $(id){return document.getElementById(id);}
+  var diag={js:'✅ স্ক্রিপ্ট',fb:'⏳ Firebase',db:'⏳ ডাটাবেস',rl:'⏳ Rules'};
+  function showDiag(){ var d=$('u-diag'); if(d){ d.style.color='#8b949e'; d.innerText=diag.js+' | '+diag.fb+' | '+diag.db+' | '+diag.rl; } }
+  showDiag();
+  function authMsg(t,ok,noAlert){
+    var b=$('u-auth-msg'); if(b){ b.style.display='block'; b.style.background=ok?'#162016':'#2d1517'; b.style.border='1px solid '+(ok?'#3fb950':'#da3633'); b.style.color=ok?'#3fb950':'#f87171'; b.innerText=t; }
+    if(!noAlert) try{ alert(t); }catch(e){}
+  }
+  if(typeof firebase==='undefined'){
+    var dead=function(){ authMsg('⚠️ Firebase লোড হয়নি। ইন্টারনেট চেক করুন, অ্যাড-ব্লকার/VPN বন্ধ করে পেজ রিলোড দিন। Facebook/Messenger ব্রাউজারে না খুলে Chrome-এ খুলুন।'); };
+    window.usrLogin=dead; window.usrSignUp=dead; window.usrForgot=dead;
+    window.switchAuthTab=function(type){
+      $('u-form-login').style.display=type==='login'?'block':'none';
+      $('u-form-signup').style.display=type==='signup'?'block':'none';
+      $('tab-btn-login').classList.toggle('on',type==='login');
+      $('tab-btn-signup').classList.toggle('on',type==='signup');
+    };
+    window.togglePass=function(id){ var i=$(id); i.type=i.type==='password'?'text':'password'; };
+    dead();
+    return;
+  }
+  diag.fb='✅ Firebase'; showDiag();
+  var udb;
+  try{ if(!firebase.apps.length) firebase.initializeApp(firebaseConfig); udb=firebase.database(); }catch(e){ diag.fb='❌ Firebase'; showDiag(); authMsg('Firebase Error: '+e.message); }
+  try{
+    udb.ref('.info/connected').on('value',function(s){ diag.db=s.val()?'✅ ডাটাবেস':'⏳ ডাটাবেস সংযোগ হচ্ছে'; showDiag(); });
+    udb.ref('settings').once('value').then(function(){ diag.rl='✅ Rules'; showDiag(); }).catch(function(e){ diag.rl='❌ Rules ('+(e.code||e.message)+')'; showDiag(); });
+  }catch(e){}
+  function ensurePersist(){
+    var A=firebase.auth(), P=firebase.auth.Auth.Persistence;
+    return A.setPersistence(P.LOCAL).catch(function(){ return A.setPersistence(P.SESSION).catch(function(){ return A.setPersistence(P.NONE); }); });
+  }
+
+  var currentUser=null,userData={},packagesData={},selectedPkg=null,selectedMethod='bkash',adminWhatsapp='',ordering=false,orderMethod='balance',payNo='',refTotal=0,refDep=0;
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function fmt(t){return t?new Date(t).toLocaleString('en-US'):'-';}
+  function validUrl(u){return /^https?:\/\/\S+\.\S+/i.test(u);}
+
+  function getDeviceId(){
+    var id=null;
+    try{ id=localStorage.getItem('tcs_device_id'); }catch(e){}
+    if(!id){ id='DEV-'+Math.random().toString(36).substring(2,11); try{ localStorage.setItem('tcs_device_id',id); }catch(e){} }
+    return id;
+  }
+
+  function initUserPanel(){
+    udb.ref('settings').on('value',function(s){
+      var d=s.val()||{};
+      if(d.siteName) $('u-site-title').innerHTML='<i class="fa-solid fa-coins" style="color:#f59e0b;"></i> '+esc(d.siteName);
+      if(d.logoUrl){ $('u-site-logo').src=d.logoUrl; $('u-site-logo').style.display='block'; }
+      if(d.paymentNo){ $('u-pay-no').innerText=d.paymentNo; payNo=d.paymentNo; $('m-pay-no').innerText=d.paymentNo; }
+      if(d.offerBannerActive && d.offerText){ $('u-offer-banner').innerText=d.offerText; $('u-offer-banner').style.display='block'; }
+      else $('u-offer-banner').style.display='none';
+      if(d.whatsappNo){
+        adminWhatsapp=d.whatsappNo.replace(/[^0-9]/g,'');
+        $('u-link-wa').href="https://wa.me/"+adminWhatsapp;
+        $('u-link-wa').style.display='flex';
+      }
+      if(d.telegramLink){ $('u-link-tg').href=d.telegramLink; $('u-link-tg').style.display='flex'; }
+    });
+    udb.ref('ads').on('value',function(s){
+      var ad=s.val()||{};
+      if(ad.active){
+        var html=ad.text?'<div>'+esc(ad.text)+'</div>':'';
+        if(ad.b
